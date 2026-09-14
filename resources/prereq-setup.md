@@ -31,7 +31,7 @@ If you don't have an IBMid yet, register one now:
 
 1. Go to **[ibm.com/account/reg/us-en/signup](https://www.ibm.com/account/reg/us-en/signup)**
 
-   <!-- SCREENSHOT: IBMid registration page showing the "Create your IBMid" form -->
+   ![IBMid registration form](prereq-setup-images/s1-ibmid-registration-form.png)
 
 2. Fill in the form:
    - **Email address** — enter your **work email address** (the address IBM will use to assign your VM)
@@ -74,7 +74,7 @@ your TechZone account under **My TechZone → My Requests**.
 
 4. You should land on the TechZone home/dashboard page
 
-   <!-- SCREENSHOT: TechZone home page after successful sign-in -->
+   ![TechZone home page after sign-in](prereq-setup-images/s2a-techzone-home.png)
 
 ---
 
@@ -82,12 +82,12 @@ your TechZone account under **My TechZone → My Requests**.
 
 1. In the TechZone navigation, click **My TechZone** → **My Requests**
 
-   <!-- SCREENSHOT: TechZone navigation with "My TechZone" and "My Requests" highlighted -->
+   ![TechZone navigation with My TechZone and My Requests highlighted](prereq-setup-images/s2b-my-techzone-nav.png)
 
 2. Look for a reservation with a name similar to **"Bob IDE"** or containing **"Bob"**
    - Status should be **Ready** or **Active** once provisioning is complete
 
-   <!-- SCREENSHOT: My Requests page showing a Bob IDE reservation in Ready/Active state -->
+   ![My Requests page showing a Bob IDE reservation in Ready/Active state](prereq-setup-images/s2b-my-requests-reservation.png)
 
 3. Click on the reservation to open its detail page
 
@@ -110,25 +110,26 @@ no SSH, no software to install.
    for **OCP-V RHEL 9 VM - Bob IDE** and click the **twisty arrow** (▶) on the left to
    expand it
 
-   <!-- SCREENSHOT: Reservation detail page with the Environments table row for "OCP-V RHEL 9 VM - Bob IDE" expanded -->
+   ![Reservation detail page with the Environments table row for OCP-V RHEL 9 VM - Bob IDE expanded](prereq-setup-images/s3-reservation-environments-row.png)
 
 2. In the expanded section, locate **"The console URL for accessing the virtual machine"**
    and click the link
 
-   <!-- SCREENSHOT: Expanded environment row showing the console URL link highlighted -->
+   ![Expanded environment row showing the console URL link highlighted](prereq-setup-images/s3-console-url-link.png)
 
-3. A new browser tab opens showing the OCP-V console. Find your VM in the list and click
-   the **Console** button
+3. A new browser tab opens showing the OCP-V console. You may be prompted to sign in with
+   your **IBMid** again at this point — use the same work email address and password. Once
+   signed in, find your VM in the list and click the **Console** button
 
-   <!-- SCREENSHOT: OCP-V console page showing the VM listed with the Console button highlighted -->
+   ![OCP-V console page showing the VM listed with the Console button highlighted](prereq-setup-images/s3-ocpv-console-vm.png)
 
 4. Another tab opens showing the RDP connection page. Click **Connect with RDP**
 
-   <!-- SCREENSHOT: RDP connection page with the "Connect with RDP" button highlighted -->
+   ![RDP connection page with the Connect with RDP button highlighted](prereq-setup-images/s3-rdp-connect-button.png)
 
 5. The RHEL desktop will load — you should see the home screen with the desktop and taskbar
 
-   <!-- SCREENSHOT: RHEL home screen loaded in the browser, showing the desktop and taskbar -->
+   ![RHEL home screen loaded in the browser, showing the desktop and taskbar](prereq-setup-images/s3-rhel-desktop-loaded.png)
 
 > 💡 **Browser tips:**
 > - Chrome and Edge both work.
@@ -147,7 +148,7 @@ no SSH, no software to install.
    of the screen. A dock appears along the bottom — click the **terminal icon** (it looks
    like a black screen with a command prompt)
 
-   <!-- SCREENSHOT: RHEL desktop with Activities menu open and the terminal icon highlighted in the dock -->
+   ![RHEL desktop with Activities menu open and the terminal icon highlighted in the dock](prereq-setup-images/s4-rhel-activities-terminal.png)
 
 2. In the terminal, type the following command and press **Enter**:
 
@@ -158,22 +159,70 @@ no SSH, no software to install.
 3. Bob will launch. On the very first launch it may take 15–30 seconds to start — this
    is normal
 
-4. When Bob finishes loading, you will see a **Log in to Bob** button. Click it
+4. **First-launch prompts** — Bob shows several one-time prompts the first time it opens.
+   Handle each one as follows:
 
-   <!-- SCREENSHOT: Bob IDE showing the "Log in to Bob" button before authentication -->
+   - **"Import settings from other editors?"** — Click **Skip** (you do not need to import
+     any settings from VS Code or other editors)
 
-5. A browser window opens automatically. Sign in with your **IBMid** (work email address
+   - **"Migrate Bob v1.0.0 chats?"** — A modal window will ask if you want to migrate chats
+     from a previous version. Click **Skip migration**
+
+   - **"A new update is available!"** — A small notification may appear in the bottom-right
+     corner of the Bob window. You can safely **ignore it or close it** — do not install the
+     update during the workshop
+
+5. When Bob finishes loading, you will see a **Log in to Bob** button. Click it
+
+   ![Bob IDE showing the Log in to Bob button before authentication](prereq-setup-images/s4-bob-login-button.png)
+
+   > 💡 **Security warning:** When you click **Log in to Bob**, your operating system or
+   > browser may show a security prompt asking if you want to allow Bob to open a browser
+   > window. Click **Allow** (or **Open**, depending on the prompt) to continue.
+
+6. A browser window opens automatically. Sign in with your **IBMid** (work email address
    and password) — the same account you verified in Step 1
 
-6. After signing in, return to the Bob window. Bob should show the chat panel on the
+7. After signing in, return to the Bob window. Bob should show the chat panel on the
    right side of the interface — you're authenticated and ready
 
-   <!-- SCREENSHOT: Bob IDE fully loaded with the chat panel visible -->
+   ![Bob IDE fully loaded with the chat panel visible](prereq-setup-images/s4-bob-chat-panel-ready.png)
 
-> ✅ **Setup complete — stop here.** Bob is open and you can see the chat panel.
-> **Do not send any prompts yet.** Every message to Bob uses Bobcoins, and you want
-> to save them for the workshop labs. Close the terminal window and leave Bob open
-> until the event starts.
+---
+
+## Step 5 — Load the lab files into Bob
+
+The workshop labs are stored in a Git repository. You will clone it directly inside Bob
+using the built-in Source Control view — no terminal needed.
+
+1. In Bob, click the **Source Control icon** in the left sidebar (it looks like a branching
+   line with a circle — third icon from the top)
+
+2. Click **Clone Repository**
+
+3. A text field appears at the top of the screen. Paste the lab repository URL:
+
+   ```
+   <LABS_REPO_URL>
+   ```
+
+   > ⚠️ **Placeholder:** The labs repository URL will be shared with participants before
+   > the event. Use the URL provided by your IBM facilitator.
+
+   Press **Enter**
+
+4. A folder picker opens. Choose a location to save the files — the default home folder
+   (`/home/<your-username>`) is fine. Click **Select as Repository Destination**
+
+5. Bob will clone the repository. When it finishes, a prompt appears asking
+   **"Would you like to open the cloned repository?"** — click **Open**
+
+6. Bob will load the lab files into the Explorer panel on the left — you are ready for
+   the workshop
+
+> ✅ **Setup complete — stop here.** Bob is open, authenticated, and the lab files are
+> loaded. **Do not send any prompts yet.** Every message to Bob uses Bobcoins, and you want
+> to save them for the workshop labs. Leave Bob open until the event starts.
 
 ---
 
@@ -187,12 +236,15 @@ no SSH, no software to install.
 | Reservation shows but status is "Pending" | Provisioning is still in progress — check back in 30–60 min |
 | No "OCP-V RHEL 9 VM - Bob IDE" row in Environments table | Scroll down on the reservation detail page; if missing, contact your IBM facilitator |
 | Console URL link is missing from the expanded row | The VM may still be provisioning — wait a few minutes and refresh the page |
+| Prompted to sign in again at the OCP-V console | Sign in with your IBMid (same work email and password) — this is expected |
 | RDP connection tab shows a blank or black screen | Wait 30 sec then refresh; if it persists, close the tab and click the console URL again |
 | Bob freezes immediately on launch | Close Bob; reopen the terminal and run `bobide --password-store=basic` |
 | "Log in to Bob" button doesn't appear | Wait 30 sec; if still missing, close Bob and relaunch with `bobide --password-store=basic` |
+| Security warning when clicking Log in to Bob | Click **Allow** or **Open** — this is expected and safe |
 | Browser doesn't open when clicking Log in | Look for a browser window behind the Bob window, or open a browser manually and try signing in again |
 | Bob asks for credentials you don't recognize | Use your IBMid work email and password — the same one you registered in Step 1 |
 | Can't find the terminal | Click **Activities** (top-left), then click the terminal icon in the dock at the bottom |
+| "Clone Repository" shows an error or "repository not found" | Confirm the URL with your IBM facilitator — the placeholder URL will be replaced before the event |
 
 **Still stuck?** Come to the **office hours session on September 21** or reach out to your
 IBM event contact before the day of the workshop. Issues are much easier to resolve before
