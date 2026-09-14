@@ -33,11 +33,26 @@ or email madison.ramsey@ibm.com.
 
 ## 🚀 Getting started
 
+### ⚙️ Before the event — complete your setup
+
+**Before arriving on September 24, follow the steps in [`resources/prereq-setup.md`](resources/prereq-setup.md):**
+
+1. Verify or create your **IBMid** (your IBM account) using your work email address
+2. Sign in to **[techzone.ibm.com](https://techzone.ibm.com)** and confirm your reserved VM is visible under **My TechZone → My Requests**
+3. Connect to your VM via the **OCP-V console** and launch Bob from the terminal
+
+> If you have any trouble with setup, come to the **office hours session on September 21** —
+> don't wait until the day of the event.
+
+---
+
+### 🏁 On the day — running the labs
+
 This workshop includes **three labs**. Everyone begins with **Lab 1**, then continues with a second lab based on your role and interests.
 
 > 💬 **All labs are driven from the Bob chat interface.** You'll type prompts, review responses, and approve actions directly in the Bob chat panel — you won't need to run scripts or use the terminal yourself. To open the chat panel if it isn't already visible, click the **Bob icon** in the sidebar, or use the keyboard shortcut **`⌥ ⌘ B`** (Mac) / **`Ctrl + Alt + B`** (Windows). The panel has three parts: the conversation history at the top, a text input at the bottom where you type your prompts, and a Send button (or press **Enter**) to submit.
 
-1. Log in to your TechZone VM
+1. Log in to your TechZone VM (see [`resources/prereq-setup.md`](resources/prereq-setup.md) if you haven't yet)
 2. Open Bob and ensure the chat panel is visible (see note above)
 3. Start with **Lab 1 — Personal Productivity** (`Lab 1 - Productivity/instructions.md`) — this lab is for everyone
 4. When you finish Lab 1, choose your next lab:
@@ -156,6 +171,7 @@ To enable auto-approve: hover over the **Auto-Approve toolbar** above the chat i
 
 | Resource | Location |
 |---|---|
+| **Pre-event setup guide** | [`resources/prereq-setup.md`](resources/prereq-setup.md) |
 | Lab 1 instructions | `Lab 1 - Productivity/instructions.md` |
 | Lab 2 instructions | `Lab 2 - Research/instructions.md` |
 | Lab 3 instructions | `Lab 3 - Developer Efficiency/instructions.md` |
